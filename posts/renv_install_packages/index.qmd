@@ -2,7 +2,7 @@
 title: "Installing packages for 'renv'"
 author: "Ruben"
 date: "2024-06-12"
-categories: [code, quarto, github]
+categories: [code, r, quarto, github]
 image: https://rstudio.github.io/renv/reference/figures/logo.svg
 image-height: 230px
 comments:
