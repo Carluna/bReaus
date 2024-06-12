@@ -5,6 +5,9 @@ date: "2024-06-12"
 categories: [code, quarto, github]
 image: https://rstudio.github.io/renv/reference/figures/logo.svg
 image-height: 230px
+comments:
+  giscus:
+    repo: Carluna/bReaus-giscus
 ---
 
 [`renv`](https://rstudio.github.io/renv/articles/renv.html){target="_blank"} is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action.
