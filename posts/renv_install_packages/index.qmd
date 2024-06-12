@@ -15,7 +15,7 @@ comments:
 To use `renv` it is necessary to install R packages again, even though they are already installed locally.
 This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!
 
-Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. If you installed new packages you have to run `renv::snapshot()`, to add the installed packages to the lockfile.
+Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. You can also install all necessary packages (e.g. knitr, markdown,...) by `renv::install()`. If you installed new packages you have to run `renv::snapshot()`, to add the installed packages to the lockfile.
 
 This is just a simple example to show, that the installation of the package worked and GitHub action runs:
 ```{r}
