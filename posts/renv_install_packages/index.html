@@ -193,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank"><code>renv</code></a> is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action.</p>
 <p>To use <code>renv</code> it is necessary to install R packages again, even though they are already installed locally. This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!</p>
-<p>Packages can be installed normally with <code>install.packages('tidyverse')</code>. Afterwards you can check the status of <code>renv</code> with <code>renv::status()</code>. If you installed new packages you have to run <code>renv::snapshot()</code>, to add the installed packages to the lockfile.</p>
+<p>Packages can be installed normally with <code>install.packages('tidyverse')</code>. Afterwards you can check the status of <code>renv</code> with <code>renv::status()</code>. You can also install all necessary packages (e.g.&nbsp;knitr, markdown,…) by <code>renv::install()</code>. If you installed new packages you have to run <code>renv::snapshot()</code>, to add the installed packages to the lockfile.</p>
 <p>This is just a simple example to show, that the installation of the package worked and GitHub action runs:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
