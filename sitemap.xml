@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Carluna.github.io/bReaus/posts/welcome/index.html</loc>
-    <lastmod>2024-06-12T07:57:58.645Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/index.html</loc>
-    <lastmod>2024-06-12T07:57:58.645Z</lastmod>
+    <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
+    <lastmod>2024-06-12T08:47:44.999Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/about.html</loc>
-    <lastmod>2024-06-12T07:57:58.645Z</lastmod>
+    <lastmod>2024-06-12T08:47:44.995Z</lastmod>
   </url>
   <url>
-    <loc>https://Carluna.github.io/bReaus/posts/post-with-code/index.html</loc>
-    <lastmod>2024-06-12T07:57:58.645Z</lastmod>
+    <loc>https://Carluna.github.io/bReaus/index.html</loc>
+    <lastmod>2024-06-12T08:47:44.999Z</lastmod>
   </url>
 </urlset>
