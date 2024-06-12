@@ -3,12 +3,16 @@ title: "Installing packages for 'renv'"
 author: "Ruben"
 date: "2024-06-12"
 categories: [code, quarto, github]
+image: https://rstudio.github.io/renv/reference/figures/logo.svg
+image-height: 230px
 ---
+
+[`renv`](https://rstudio.github.io/renv/articles/renv.html){target="_blank"} is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action.
 
 To use `renv` it is necessary to install R packages again, even though they are already installed locally.
 This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!
 
-Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. If you installed new packages you have to run `renv::snapshot()`.
+Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. If you installed new packages you have to run `renv::snapshot()`, to add the installed packages to the lockfile.
 
 This is just a simple example to show, that the installation of the package worked and GitHub action runs:
 ```{r}
