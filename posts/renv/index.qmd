@@ -1,0 +1,38 @@
+---
+title: "Installing packages for 'renv'"
+author: "Ruben"
+date: "2024-06-12"
+categories: [code, quarto, github]
+---
+
+To use `renv` it is necessary to install R packages again, even though they are already installed locally.
+This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!
+
+Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. If you installed new packages you have to run `renv::snapshot()`.
+
+This is just a simple example to show, that the installation of the package worked and GitHub action runs:
+```{r}
+library(tidyverse)
+```
+
+```{r}
+x <- seq(1,100,1)
+y <- cos(x)
+
+df <- tibble(x, y) |>
+  mutate(z = sin(x))
+
+head(df)
+```
+
+```{r}
+ggplot(df) +
+  geom_line(
+    mapping = aes(x = x, y = y), linetype = 'dashed' 
+  ) +
+  geom_line(
+    mapping = aes(x = x, y = z)
+  ) +
+  theme_minimal()
+```
+
