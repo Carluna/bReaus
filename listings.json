@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/dashboard_self_update/index.html",
       "/posts/package_development_rstudio/index.html",
       "/posts/renv_install_packages/index.html"
     ]
