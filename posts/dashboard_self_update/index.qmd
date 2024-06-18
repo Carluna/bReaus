@@ -7,6 +7,7 @@ image-height: 230px
 comments:
   giscus:
     repo: Carluna/bReaus-giscus
+toc: true
 ---
 
 Dashboards are cool and self updating dashboards are even cooler! This is short insight how to create something like [this](https://carluna.github.io/klima-freiburg/).
@@ -120,7 +121,7 @@ ggplotly(
 
 Hey! Now we have a (very simple) dashboard! But we have to render it ourself to get the newest values of the DWD database and can only use it locally. This is where we have to...
 
-# Use GitHub-actions and -pages to publish our dashboard 
+# Use GitHub-actions and -pages to publish the dashboard 
 
 This next step is actually quite easy. You have to create a new repository on GitHub, init, add remote, add ., commit and push (the usual stuff!) and add a `.github` folder in your Quarto project. In there you create a folder called `workflows` and in which you create a file: `publish.yml`. You can find more information [here](https://quarto.org/docs/publishing/github-pages.html).
 
@@ -128,7 +129,6 @@ This next step is actually quite easy. You have to create a new repository on Gi
 
 
 ```{.yaml filename='.github/workflows/publish.yml'}
-
 on:
   workflow_dispatch:
   push:
