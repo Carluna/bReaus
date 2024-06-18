@@ -3,13 +3,12 @@ title: "Developing packages in RStudio"
 author: "Leo"
 date: "2024-06-18"
 categories: [code, r, packages, rstudio]
-image: "posts/package_development_rstudio/images/packages_logo.png"
+image: "images/packages_logo.png"
 image-height: 230px
 comments:
   giscus:
     repo: Carluna/bReaus-giscus
 ---
-
 
 ## Intro
 
@@ -59,7 +58,8 @@ comments:
 
 ## Structure
 
-[![](posts/package_development_rstudio/images/folder_structure.png){fig-align="center"}](https://rstudio.github.io/cheatsheets/package-development.pdf)
+![](images/packages_folder_structure.png){fig-align="center"}](https://rstudio.github.io/cheatsheets/package-development.pdf)
+
 
 -   `DESCRIPTION` provides metadata about the package
 
@@ -127,9 +127,9 @@ These functions are called multiple times per day or per hour, during developmen
 
 -   ***in-memory*** - package loaded into memory
 
-[![](posts/package_development_rstudio/images/install-load.png){fig-align="center"}](https://r-pkgs.org/structure.html#fig-package-files)
+![](images/install-load.png){fig-align="center"}](https://r-pkgs.org/structure.html#fig-package-files)
 
-## more info:
+## more info
 
 [Writing R Extensions (r-project.org)](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages)
 
