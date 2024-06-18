@@ -10,36 +10,12 @@ comments:
     repo: Carluna/bReaus-giscus
 ---
 
-[`renv`](https://rstudio.github.io/renv/articles/renv.html){target="_blank"} is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action.
+[`renv`](https://rstudio.github.io/renv/articles/renv.html){target="_blank"} is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action, when you want to render quarto document remote.
 
-To use `renv` it is necessary to install R packages again, even though they are already installed locally.
-This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!
+To use `renv` it is necessary to install R packages again, even though they are already installed locally. This enables to use GitHub actions to automatically render the Quarto-Project to deploy a GitHub page!
 
-Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. You can also install all necessary packages (e.g. knitr, markdown,...) by `renv::install()`. If you installed new packages you have to run `renv::snapshot()`, to add the installed packages to the lockfile.
+Packages can be installed normally with `install.packages('tidyverse')`. Afterwards you can check the status of `renv` with `renv::status()`. You can also install all necessary packages (e.g. knitr, markdown,...) by `renv::install()`. If you installed new packages you have to run `renv::snapshot()`, to add the installed packages to the lockfile. The lockfile holds all the information about the used packages and when the build and deploy action is performed all the packages will be installed.
 
-This is just a simple example to show, that the installation of the package worked and GitHub action runs:
-```{r}
-library(tidyverse)
-```
+![Output of the build-deploy action on GitHub](example_gitAction.png)
 
-```{r}
-x <- seq(1,100,1)
-y <- cos(x)
-
-df <- tibble(x, y) |>
-  mutate(z = sin(x))
-
-head(df)
-```
-
-```{r}
-ggplot(df) +
-  geom_line(
-    mapping = aes(x = x, y = y), linetype = 'dashed' 
-  ) +
-  geom_line(
-    mapping = aes(x = x, y = z)
-  ) +
-  theme_minimal()
-```
-
+For more information on how to use GitHub-actions with Quarto click [here](https://quarto.org/docs/publishing/github-pages.html)!
