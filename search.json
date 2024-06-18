@@ -46,7 +46,7 @@
     "href": "posts/package_development_rstudio/index.html#structure",
     "title": "Developing packages in RStudio",
     "section": "Structure",
-    "text": "Structure\n\n\n\n\n\n\nDESCRIPTION provides metadata about the package\nNAMESPACE declares the functions the package exports for external use and the external functions your package imports from other packages. is automatically edited when using roxygen2\n.Rbuildignore lists files that are needed to be around but should not be included when building the R package from source\n.Rproj.user - directory used internally by RStudio\n.gitignore anticipates Git usage and tells Git to ignore some standard, behind-the-scenes files created by R and RStudio\ntests/ directory in which the testing framework is placed, containing specific tests for the functions"
+    "text": "Structure\n](https://rstudio.github.io/cheatsheets/package-development.pdf)\n\nDESCRIPTION provides metadata about the package\nNAMESPACE declares the functions the package exports for external use and the external functions your package imports from other packages. is automatically edited when using roxygen2\n.Rbuildignore lists files that are needed to be around but should not be included when building the R package from source\n.Rproj.user - directory used internally by RStudio\n.gitignore anticipates Git usage and tells Git to ignore some standard, behind-the-scenes files created by R and RStudio\ntests/ directory in which the testing framework is placed, containing specific tests for the functions"
   },
   {
     "objectID": "posts/package_development_rstudio/index.html#main-functions-during-development",
@@ -67,13 +67,13 @@
     "href": "posts/package_development_rstudio/index.html#package-states",
     "title": "Developing packages in RStudio",
     "section": "Package states",
-    "text": "Package states\n\nsource - directory of files with specific package structure\nbundled - compressed into single file using extension .tar.gz\nbinary - single platform-specific file\ninstalled - binary package that’s been compressed into a package library\nin-memory - package loaded into memory"
+    "text": "Package states\n\nsource - directory of files with specific package structure\nbundled - compressed into single file using extension .tar.gz\nbinary - single platform-specific file\ninstalled - binary package that’s been compressed into a package library\nin-memory - package loaded into memory\n\n](https://r-pkgs.org/structure.html#fig-package-files)"
   },
   {
     "objectID": "posts/package_development_rstudio/index.html#more-info",
     "href": "posts/package_development_rstudio/index.html#more-info",
     "title": "Developing packages in RStudio",
-    "section": "more info:",
-    "text": "more info:\nWriting R Extensions (r-project.org)\nR packages book (2e)"
+    "section": "more info",
+    "text": "more info\nWriting R Extensions (r-project.org)\nR packages book (2e)"
   }
 ]
