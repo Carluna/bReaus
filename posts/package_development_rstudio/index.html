@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leo">
+<meta name="dcterms.date" content="2024-06-18">
 
-<title>bReaus</title>
+<title>bReaus - Developing packages in RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">bReaus</span>
     </a>
   </div>
@@ -149,7 +91,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,128 +114,155 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">bReaus</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Developing packages in RStudio</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">r</div>
+                <div class="quarto-category">packages</div>
+                <div class="quarto-category">rstudio</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Leo </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 18, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="github">github <span class="quarto-category-count">(1)</span></div><div class="category" data-category="packages">packages <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(2)</span></div><div class="category" data-category="rstudio">rstudio <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="intro" class="level2">
+<h2 class="anchored" data-anchor-id="intro">Intro</h2>
+<p><strong><em>Why to write a package?</em></strong> Packages provide an easy way to <em>share code with others or use it later,</em> saving time by <em>organizing the code and projects in standardized way</em>.</p>
+<p><strong><em>Philosophy:</em></strong> anything that can be automated, should be automated.</p>
+<p><strong>Prerequisites:</strong> <code>install.packages(c("devtools", "roxygen2", "testthat", "knitr"))</code></p>
+</section>
+<section id="basic-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="basic-workflow">Basic workflow</h2>
+<ol type="1">
+<li><p><strong>create package</strong> either via <code>devtools::create(path)</code> or via RStudio–&gt;new Project–&gt;new R package</p></li>
+<li><p>in case <strong>git</strong> should be used: <code>devtools::use_git()</code></p></li>
+<li><p><strong>editing functions:</strong></p>
+<ol type="1">
+<li><p><code>usethis::use_r("functionname")</code> to create a new function script, naming the file after the function. New&nbsp;<code>.R</code>-files for each user-facing function in the package. After adding more functions, these might be grouped.</p></li>
+<li><p>create <code>roxygen2</code>-skeleton to provide information and document functions via <code>'Ctrl + Alt + Shift + R'</code></p></li>
+<li><p><code>devtools::load_all()</code> to load the created functions under <code>R/</code> subdirectory</p></li>
+<li><p><code>usethis::use_package()</code> to include functions from other packages (adding them to the&nbsp;<code>Imports</code>&nbsp;field of&nbsp;<code>DESCRIPTION)</code>. The function can be used via <code>packagename::fun()</code></p></li>
+<li><p>(git-commit after editing a function)</p></li>
+<li><p><code>devtools::rename_files("old_name", "new_name")</code> to update the function name in files –&gt; <em>Don’t forget to update test-files, too!</em></p></li>
+</ol></li>
+<li><p><strong>check</strong> that an R package is in full working order with <code>devtools::check()</code> or <code>'Ctrl + Shift + E'</code>, providing a convenient way to run this without leaving the R session</p></li>
+<li><p><strong>create testing infrastructure</strong> via <code>usethis::use_testthat()</code></p>
+<ol type="1">
+<li><p><code>usethis::use_test("function_name")</code> to create a test-file for a specific function</p></li>
+<li><p><code>devtools::test()</code> or <code>'Ctrl + Shift + T'</code> to run test</p></li>
+</ol></li>
+<li><p><strong>pick license</strong>, e.g.&nbsp;via <code>usethis::use_mit_license()</code>, creating <code>LICENSE</code> and <code>LICENSE.md</code>-files</p></li>
+<li><p>create and update <strong>documentation</strong> via <code>devtools::document()</code></p></li>
+<li><p><code>use_readme_rmd()</code>&nbsp;initializes a basic, executable&nbsp;<code>README.Rmd</code>&nbsp;file for the github page to describe the purpose of the package, providing installation instructions, and showing a bit of usage. <code>build_readme()</code> renders the file</p></li>
+<li><p><strong>Installation:</strong> <code>devtools::check()</code> again, then install package into library via <code>devtools::install()</code></p></li>
+<li><p><strong>Publish:</strong> <code>devtools::build()</code>converts package folder/project into single bundled file</p></li>
+</ol>
+</section>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://rstudio.github.io/cheatsheets/package-development.pdf"><img src="posts/package_development_rstudio/images/folder_structure.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<ul>
+<li><p><code>DESCRIPTION</code> provides metadata about the package</p></li>
+<li><p><code>NAMESPACE</code> declares the functions the package exports for external use and the external functions your package imports from other packages. is automatically edited when using <code>roxygen2</code></p></li>
+<li><p><code>.Rbuildignore</code> lists files that are needed to be around but should not be included when building the R package from source</p></li>
+<li><p><code>.Rproj.user</code> - directory used internally by RStudio</p></li>
+<li><p><code>.gitignore</code> anticipates Git usage and tells Git to ignore some standard, behind-the-scenes files created by R and RStudio</p></li>
+<li><p><code>tests/</code> directory in which the testing framework is placed, containing specific tests for the functions</p></li>
+</ul>
+</section>
+<section id="main-functions-during-development" class="level2">
+<h2 class="anchored" data-anchor-id="main-functions-during-development">Main functions during development</h2>
+<p>These functions setup parts of the package and are typically called once per package:</p>
+<ul>
+<li><p><a href="https://usethis.r-lib.org/reference/create_package.html"><code>create_package()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_git.html"><code>use_git()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/licenses.html"><code>use_mit_license()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_testthat.html"><code>use_testthat()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_github.html"><code>use_github()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_readme_rmd.html"><code>use_readme_rmd()</code></a></p></li>
+</ul>
+<p>These functions are called on a regular basis, as adding functions and tests or taking on dependencies:</p>
+<ul>
+<li><p><a href="https://usethis.r-lib.org/reference/use_r.html"><code>use_r()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_r.html"><code>use_test()</code></a></p></li>
+<li><p><a href="https://usethis.r-lib.org/reference/use_package.html"><code>use_package()</code></a></p></li>
+</ul>
+<p>These functions are called multiple times per day or per hour, during development:</p>
+<ul>
+<li><p><a href="https://devtools.r-lib.org/reference/load_all.html"><code>load_all()</code></a></p></li>
+<li><p><a href="https://devtools.r-lib.org/reference/document.html"><code>document()</code></a></p></li>
+<li><p><a href="https://devtools.r-lib.org/reference/test.html"><code>test()</code></a></p></li>
+<li><p><a href="https://devtools.r-lib.org/reference/check.html"><code>check()</code></a></p></li>
+</ul>
+</section>
+<section id="main-shortcuts" class="level2">
+<h2 class="anchored" data-anchor-id="main-shortcuts">Main shortcuts</h2>
+<ul>
+<li><p><code>Ctrl + Shift + T</code> - run <code>devtools::test()</code></p></li>
+<li><p><code>Ctrl + Shift + E</code> - run <code>devtools::check()</code></p></li>
+<li><p><code>Ctrl + Shift + Alt + R</code> - create roxygen2 skeleton</p></li>
+</ul>
+</section>
+<section id="package-states" class="level2">
+<h2 class="anchored" data-anchor-id="package-states">Package states</h2>
+<ul>
+<li><p><strong><em>source</em></strong> - directory of files with specific package structure</p></li>
+<li><p><strong><em>bundled</em></strong> - compressed into single file using extension <code>.tar.gz</code></p></li>
+<li><p><strong><em>binary</em></strong> - single platform-specific file</p></li>
+<li><p><strong><em>installed</em></strong> - binary package that’s been compressed into a package library</p></li>
+<li><p><strong><em>in-memory</em></strong> - package loaded into memory</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://r-pkgs.org/structure.html#fig-package-files"><img src="posts/package_development_rstudio/images/install-load.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="more-info" class="level2">
+<h2 class="anchored" data-anchor-id="more-info">more info:</h2>
+<p><a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">Writing R Extensions (r-project.org)</a></p>
+<p><a href="https://r-pkgs.org/">R packages book (2e)</a></p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,r,packages,rstudio" data-listing-date-sort="1718668800000" data-listing-file-modified-sort="1718697483697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="607">
-<div class="thumbnail">
-<p><a href="./posts/package_development_rstudio/index.html" class="no-external"></a></p><a href="./posts/package_development_rstudio/index.html" class="no-external">
-<p><img src="./posts/package_development_rstudio/posts/package_development_rstudio/images/packages_logo.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/package_development_rstudio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/package_development_rstudio/index.html" class="no-external">Developing packages in RStudio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/package_development_rstudio/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('packages'); return false;">
-packages
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
-rstudio
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/package_development_rstudio/index.html" class="no-external"><strong><em>Why to write a package?</em></strong> Packages provide an easy way to <em>share code with others or use it later,</em> saving time by <em>organizing the code and projects in standardized way</em>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/package_development_rstudio/index.html" class="no-external">
-<div class="listing-date">
-Jun 18, 2024
-</div>
-<div class="listing-author">
-Leo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="code,r,quarto,github" data-listing-date-sort="1718150400000" data-listing-file-modified-sort="1718697483697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173">
-<div class="thumbnail">
-<p><a href="./posts/renv_install_packages/index.html" class="no-external"></a></p><a href="./posts/renv_install_packages/index.html" class="no-external">
-<p><img src="https://rstudio.github.io/renv/reference/figures/logo.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/renv_install_packages/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/renv_install_packages/index.html" class="no-external">Installing packages for ‘renv’</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/renv_install_packages/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('github'); return false;">
-github
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/renv_install_packages/index.html" class="no-external"><code>renv</code> is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/renv_install_packages/index.html" class="no-external">
-<div class="listing-date">
-Jun 12, 2024
-</div>
-<div class="listing-author">
-Ruben
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -703,6 +672,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="Carluna/bReaus-giscus" data-repo-id="R_kgDOMIWLiA" data-category="General" data-category-id="DIC_kwDOMIWLiM4CgCCq" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 
 

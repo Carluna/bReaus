@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
-    <lastmod>2024-06-12T12:35:51.227Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/about.html</loc>
-    <lastmod>2024-06-12T12:35:51.227Z</lastmod>
+    <lastmod>2024-06-18T07:58:03.697Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/index.html</loc>
-    <lastmod>2024-06-12T12:35:51.227Z</lastmod>
+    <lastmod>2024-06-18T07:58:03.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/about.html</loc>
+    <lastmod>2024-06-18T07:58:03.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/posts/package_development_rstudio/index.html</loc>
+    <lastmod>2024-06-18T07:58:03.697Z</lastmod>
   </url>
 </urlset>
