@@ -1,0 +1,136 @@
+---
+title: "Developing packages in RStudio"
+author: "Leo"
+date: "2024-06-18"
+categories: [code, r, packages, rstudio]
+image: "posts/package_development_rstudio/images/packages_logo.png"
+image-height: 230px
+comments:
+  giscus:
+    repo: Carluna/bReaus-giscus
+---
+
+
+## Intro
+
+***Why to write a package?*** Packages provide an easy way to *share code with others or use it later,* saving time by *organizing the code and projects in standardized way*.
+
+***Philosophy:*** anything that can be automated, should be automated.
+
+**Prerequisites:** `install.packages(c("devtools", "roxygen2", "testthat", "knitr"))`
+
+## Basic workflow
+
+1.  **create package** either via `devtools::create(path)` or via RStudio–\>new Project–\>new R package
+
+2.  in case **git** should be used: `devtools::use_git()`
+
+3.  **editing functions:**
+
+    1.  `usethis::use_r("functionname")` to create a new function script, naming the file after the function. New `.R`-files for each user-facing function in the package. After adding more functions, these might be grouped.
+
+    2.  create `roxygen2`-skeleton to provide information and document functions via `'Ctrl + Alt + Shift + R'`
+
+    3.  `devtools::load_all()` to load the created functions under `R/` subdirectory
+
+    4.  `usethis::use_package()` to include functions from other packages (adding them to the `Imports` field of `DESCRIPTION)`. The function can be used via `packagename::fun()`
+
+    5.  (git-commit after editing a function)
+
+    6.  `devtools::rename_files("old_name", "new_name")` to update the function name in files –\> *Don't forget to update test-files, too!*
+
+4.  **check** that an R package is in full working order with `devtools::check()` or `'Ctrl + Shift + E'`, providing a convenient way to run this without leaving the R session
+
+5.  **create testing infrastructure** via `usethis::use_testthat()`
+
+    1.  `usethis::use_test("function_name")` to create a test-file for a specific function
+
+    2.  `devtools::test()` or `'Ctrl + Shift + T'` to run test
+
+6.  **pick license**, e.g. via `usethis::use_mit_license()`, creating `LICENSE` and `LICENSE.md`-files
+
+7.  create and update **documentation** via `devtools::document()`
+
+8.  `use_readme_rmd()` initializes a basic, executable `README.Rmd` file for the github page to describe the purpose of the package, providing installation instructions, and showing a bit of usage. `build_readme()` renders the file
+
+9.  **Installation:** `devtools::check()` again, then install package into library via `devtools::install()`
+
+10. **Publish:** `devtools::build()`converts package folder/project into single bundled file
+
+## Structure
+
+[![](posts/package_development_rstudio/images/folder_structure.png){fig-align="center"}](https://rstudio.github.io/cheatsheets/package-development.pdf)
+
+-   `DESCRIPTION` provides metadata about the package
+
+-   `NAMESPACE` declares the functions the package exports for external use and the external functions your package imports from other packages. is automatically edited when using `roxygen2`
+
+-   `.Rbuildignore` lists files that are needed to be around but should not be included when building the R package from source
+
+-   `.Rproj.user` - directory used internally by RStudio
+
+-   `.gitignore` anticipates Git usage and tells Git to ignore some standard, behind-the-scenes files created by R and RStudio
+
+-   `tests/` directory in which the testing framework is placed, containing specific tests for the functions
+
+## Main functions during development
+
+These functions setup parts of the package and are typically called once per package:
+
+-   [`create_package()`](https://usethis.r-lib.org/reference/create_package.html)
+
+-   [`use_git()`](https://usethis.r-lib.org/reference/use_git.html)
+
+-   [`use_mit_license()`](https://usethis.r-lib.org/reference/licenses.html)
+
+-   [`use_testthat()`](https://usethis.r-lib.org/reference/use_testthat.html)
+
+-   [`use_github()`](https://usethis.r-lib.org/reference/use_github.html)
+
+-   [`use_readme_rmd()`](https://usethis.r-lib.org/reference/use_readme_rmd.html)
+
+These functions are called on a regular basis, as adding functions and tests or taking on dependencies:
+
+-   [`use_r()`](https://usethis.r-lib.org/reference/use_r.html)
+
+-   [`use_test()`](https://usethis.r-lib.org/reference/use_r.html)
+
+-   [`use_package()`](https://usethis.r-lib.org/reference/use_package.html)
+
+These functions are called multiple times per day or per hour, during development:
+
+-   [`load_all()`](https://devtools.r-lib.org/reference/load_all.html)
+
+-   [`document()`](https://devtools.r-lib.org/reference/document.html)
+
+-   [`test()`](https://devtools.r-lib.org/reference/test.html)
+
+-   [`check()`](https://devtools.r-lib.org/reference/check.html)
+
+## Main shortcuts
+
+-   `Ctrl + Shift + T` - run `devtools::test()`
+
+-   `Ctrl + Shift + E` - run `devtools::check()`
+
+-   `Ctrl + Shift + Alt + R` - create roxygen2 skeleton
+
+## Package states
+
+-   ***source*** - directory of files with specific package structure
+
+-   ***bundled*** - compressed into single file using extension `.tar.gz`
+
+-   ***binary*** - single platform-specific file
+
+-   ***installed*** - binary package that's been compressed into a package library
+
+-   ***in-memory*** - package loaded into memory
+
+[![](posts/package_development_rstudio/images/install-load.png){fig-align="center"}](https://r-pkgs.org/structure.html#fig-package-files)
+
+## more info:
+
+[Writing R Extensions (r-project.org)](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages)
+
+[R packages book (2e)](https://r-pkgs.org/)
