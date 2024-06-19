@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="what-is-a-quarto-dashboard" class="level1">
 <h1>What is a Quarto dashboard?</h1>
-<p>A Quarto dashboard is a website consisting of one or more pages, where you can visualize your data, do some monitoring and also add interactivity (Shiny and ojs)! To create one yourself, you just have to create a new Quarto project with a <code>.qmd</code> file and change the format to <em>dashboard</em>.</p>
+<p>A Quarto dashboard is a website consisting of one or more pages, where you can visualize your data, do some monitoring and also add interactivity (Shiny and ojs)! To create one yourself, you just have to create a new Quarto project with a <code>.qmd</code> file and change the format to <em>dashboard</em>. Make sure to enable <code>renv</code> and <code>git</code>.</p>
 <blockquote class="blockquote">
 <p>Note: the output file is called <code>index.html</code>, so the website can be hosted later over GitHub pages.</p>
 </blockquote>
@@ -296,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>.github/workflows/publish.yml</strong></pre>
 </div>
-<div class="sourceCode" id="cb6" data-filename=".github/workflows/publish.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<div class="sourceCode" id="cb6" data-filename=".github/workflows/publish.yml"><pre class="sourceCode yaml code-overflow-scroll code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">workflow_dispatch</span><span class="kw">:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> main</span></span>

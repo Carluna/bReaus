@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
-    <lastmod>2024-06-18T21:42:55.381Z</lastmod>
+    <loc>https://Carluna.github.io/bReaus/about.html</loc>
+    <lastmod>2024-06-19T09:27:48.878Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/posts/dashboard_self_update/index.html</loc>
-    <lastmod>2024-06-18T21:42:55.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/about.html</loc>
-    <lastmod>2024-06-18T21:42:55.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/index.html</loc>
-    <lastmod>2024-06-18T21:42:55.377Z</lastmod>
+    <lastmod>2024-06-19T09:27:48.882Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/posts/package_development_rstudio/index.html</loc>
-    <lastmod>2024-06-18T21:42:55.381Z</lastmod>
+    <lastmod>2024-06-19T09:27:48.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
+    <lastmod>2024-06-19T09:27:48.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/index.html</loc>
+    <lastmod>2024-06-19T09:27:48.878Z</lastmod>
   </url>
 </urlset>
