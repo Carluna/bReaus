@@ -22,7 +22,7 @@ The German Weather Service (DWD) has a R-package called `rdwd`. It is a great to
 
 # What is a Quarto dashboard?
 
-A Quarto dashboard is a website consisting of one or more pages, where you can visualize your data, do some monitoring and also add interactivity (Shiny and ojs)! To create one yourself, you just have to create a new Quarto project with a `.qmd` file and change the format to *dashboard*. 
+A Quarto dashboard is a website consisting of one or more pages, where you can visualize your data, do some monitoring and also add interactivity (Shiny and ojs)! To create one yourself, you just have to create a new Quarto project with a `.qmd` file and change the format to *dashboard*. Make sure to enable `renv` and `git`.
 
 >Note: the output file is called `index.html`, so the website can be hosted later over GitHub pages.
 
@@ -128,7 +128,7 @@ This next step is actually quite easy. You have to create a new repository on Gi
 
 
 
-```{.yaml filename='.github/workflows/publish.yml'}
+```{.yaml filename='.github/workflows/publish.yml'.code-overflow-scroll}
 on:
   workflow_dispatch:
   push:
@@ -170,7 +170,7 @@ jobs:
 
 The magic happens through the schedule, where you can set a `cron` expression when to render and publish your dashboard. I have the feeling this is a science to itself so [here](https://crontab.guru/every-2-hours) is a webiste to create the cron expression you desire. In my case I added a cron expression to run the action every two hours. In my time output I realized that there is a time difference of 2 hours from the GitHub servers to central european time, have that in mind!
 
-```yaml
+```{.yaml}
 on:
   workflow_dispatch:
   push:
