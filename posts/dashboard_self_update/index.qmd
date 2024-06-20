@@ -35,7 +35,7 @@ format:
 ---
 ```
 
-# Fill the dashboard
+# Fill the dashboard {{< iconify line-md:cog-filled-loop >}}
 
 The first thing to do, is to get the data from the DWD API. Therefore we load the package `rdwd` and also `bit64`, which is required. With `selectDWD()` you can select the location of your station, the variables you want to download and the time resolution. In my case I selected Freiburg, air temperature and precipitation in an hourly resolution. There are many more variables to download, an exact tutorial can be found in the [documentation](https://bookdown.org/brry/rdwd/).
 
@@ -121,7 +121,7 @@ ggplotly(
 
 Hey! Now we have a (very simple) dashboard! But we have to render it ourself to get the newest values of the DWD database and can only use it locally. This is where we have to...
 
-# Use GitHub-actions and -pages to publish the dashboard 
+# Use GitHub-actions and -pages to publish the dashboard  {{< iconify line-md:github-loop >}}
 
 This next step is actually quite easy. You have to create a new repository on GitHub, init, add remote, add ., commit and push (the usual stuff!) and add a `.github` folder in your Quarto project. In there you create a folder called `workflows` and in which you create a file: `publish.yml`. You can find more information [here](https://quarto.org/docs/publishing/github-pages.html).
 
@@ -181,7 +181,7 @@ on:
 
 The last thing to do now is to add a branch called *gh-pages* to your repository and push the `publish.yml`. Activate Github pages under the setting of your repository and choose *gh-pages* as the branch to deploy from. Now every two hours and with every push my dashboard will be updated!
 
-# What now?
+# What now? {{< iconify  line-md:watch-loop >}}
 
 These were really the basics to start a dashboard, but for me there will be some more steps to make the data visualization and information better. You can see the live dashboard under [https://carluna.github.io/klima-freiburg/](https://carluna.github.io/klima-freiburg/) and view the whole code here: [https://github.com/Carluna/klima-freiburg](https://github.com/Carluna/klima-freiburg)! 
 

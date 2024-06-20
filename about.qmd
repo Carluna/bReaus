@@ -1,12 +1,13 @@
 ---
 title: "About"
-image: profile.jpg
 about:
   template: jolla
   links:
     - icon: github
       text: Github
       href: https://github.com/Carluna/bReaus
+  image: hex-bReaus_final.png
+  image-shape: rectangle 
 
 ---
 # bReaus
