@@ -16,7 +16,7 @@ Dashboards are cool and self updating dashboards are even cooler! This is short 
 
 # Introduction
 
-The idea of having something like a live server on a static website somehow fascinates me! So I tried to use `rvest` to scrape a german website which hosts relative up-to-date discharge values of rivers in Baden-Würrtemberg. Sadly I was not able to read the table (yet!), but I tried something else.
+The idea of having interactivity and updating content on a static website somehow fascinates me! So I tried to use `rvest` to scrape a german website which hosts relative up-to-date discharge values of rivers in Baden-Würrtemberg. Sadly I was not able to read the table (yet!), but I tried something else.
 
 The German Weather Service (DWD) has a R-package called `rdwd`. It is a great tool to access a lot of different climate data in Germany and the world! So the idea was to build a dashboard to present the recent climate in Freiburg and add more features in the near future.
 
