@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../hex-bReaus_final.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,6 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -185,9 +187,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#what-is-a-quarto-dashboard" id="toc-what-is-a-quarto-dashboard" class="nav-link" data-scroll-target="#what-is-a-quarto-dashboard">What is a Quarto dashboard?</a></li>
-  <li><a href="#fill-the-dashboard" id="toc-fill-the-dashboard" class="nav-link" data-scroll-target="#fill-the-dashboard">Fill the dashboard</a></li>
-  <li><a href="#use-github-actions-and--pages-to-publish-the-dashboard" id="toc-use-github-actions-and--pages-to-publish-the-dashboard" class="nav-link" data-scroll-target="#use-github-actions-and--pages-to-publish-the-dashboard">Use GitHub-actions and -pages to publish the dashboard</a></li>
-  <li><a href="#what-now" id="toc-what-now" class="nav-link" data-scroll-target="#what-now">What now?</a></li>
+  <li><a href="#fill-the-dashboard" id="toc-fill-the-dashboard" class="nav-link" data-scroll-target="#fill-the-dashboard">Fill the dashboard <iconify-icon inline="" icon="line-md:cog-filled-loop" aria-label="Icon cog-filled-loop from line-md Iconify.design set." title="Icon cog-filled-loop from line-md Iconify.design set."></iconify-icon></a></li>
+  <li><a href="#use-github-actions-and--pages-to-publish-the-dashboard" id="toc-use-github-actions-and--pages-to-publish-the-dashboard" class="nav-link" data-scroll-target="#use-github-actions-and--pages-to-publish-the-dashboard">Use GitHub-actions and -pages to publish the dashboard <iconify-icon inline="" icon="line-md:github-loop" aria-label="Icon github-loop from line-md Iconify.design set." title="Icon github-loop from line-md Iconify.design set."></iconify-icon></a></li>
+  <li><a href="#what-now" id="toc-what-now" class="nav-link" data-scroll-target="#what-now">What now? <iconify-icon inline="" icon="line-md:watch-loop" aria-label="Icon watch-loop from line-md Iconify.design set." title="Icon watch-loop from line-md Iconify.design set."></iconify-icon></a></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="fill-the-dashboard" class="level1">
-<h1>Fill the dashboard</h1>
+<h1>Fill the dashboard <iconify-icon inline="" icon="line-md:cog-filled-loop" aria-label="Icon cog-filled-loop from line-md Iconify.design set." title="Icon cog-filled-loop from line-md Iconify.design set."></iconify-icon></h1>
 <p>The first thing to do, is to get the data from the DWD API. Therefore we load the package <code>rdwd</code> and also <code>bit64</code>, which is required. With <code>selectDWD()</code> you can select the location of your station, the variables you want to download and the time resolution. In my case I selected Freiburg, air temperature and precipitation in an hourly resolution. There are many more variables to download, an exact tutorial can be found in the <a href="https://bookdown.org/brry/rdwd/">documentation</a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required packages</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(bit64)</span>
@@ -290,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Hey! Now we have a (very simple) dashboard! But we have to render it ourself to get the newest values of the DWD database and can only use it locally. This is where we have to…</p>
 </section>
 <section id="use-github-actions-and--pages-to-publish-the-dashboard" class="level1">
-<h1>Use GitHub-actions and -pages to publish the dashboard</h1>
+<h1>Use GitHub-actions and -pages to publish the dashboard <iconify-icon inline="" icon="line-md:github-loop" aria-label="Icon github-loop from line-md Iconify.design set." title="Icon github-loop from line-md Iconify.design set."></iconify-icon></h1>
 <p>This next step is actually quite easy. You have to create a new repository on GitHub, init, add remote, add ., commit and push (the usual stuff!) and add a <code>.github</code> folder in your Quarto project. In there you create a folder called <code>workflows</code> and in which you create a file: <code>publish.yml</code>. You can find more information <a href="https://quarto.org/docs/publishing/github-pages.html">here</a>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -344,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The last thing to do now is to add a branch called <em>gh-pages</em> to your repository and push the <code>publish.yml</code>. Activate Github pages under the setting of your repository and choose <em>gh-pages</em> as the branch to deploy from. Now every two hours and with every push my dashboard will be updated!</p>
 </section>
 <section id="what-now" class="level1">
-<h1>What now?</h1>
+<h1>What now? <iconify-icon inline="" icon="line-md:watch-loop" aria-label="Icon watch-loop from line-md Iconify.design set." title="Icon watch-loop from line-md Iconify.design set."></iconify-icon></h1>
 <p>These were really the basics to start a dashboard, but for me there will be some more steps to make the data visualization and information better. You can see the live dashboard under <a href="https://carluna.github.io/klima-freiburg/">https://carluna.github.io/klima-freiburg/</a> and view the whole code here: <a href="https://github.com/Carluna/klima-freiburg">https://github.com/Carluna/klima-freiburg</a>!</p>
 
 
