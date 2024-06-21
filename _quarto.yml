@@ -3,7 +3,7 @@ project:
 
 website:
   title: "bReaus"
-  favicon: hex-bReaus_final.png
+  favicon: hex-bReaus_final2.png
   navbar:
     right:
       - about.qmd

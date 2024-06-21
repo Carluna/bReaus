@@ -6,7 +6,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com/Carluna/bReaus
-  image: hex-bReaus_final.png
+  image: hex-bReaus_final2.png
   image-shape: rectangle 
 
 ---
