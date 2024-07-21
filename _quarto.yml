@@ -15,8 +15,6 @@ format:
     theme: cosmo
     css: styles.css
 
-monofont: JetBrainsMono Nerd Font
-mainfont: IBM Plex Mono
 
 
 
