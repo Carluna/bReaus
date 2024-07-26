@@ -24,7 +24,6 @@ jobs:
 
       - name: Install  libproj.so
         run: sudo apt-get install -y  libproj.so.22
-        run: sudo ldconfig
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
