@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Carluna.github.io/bReaus/index.html</loc>
-    <lastmod>2024-07-21T10:19:54.436Z</lastmod>
+    <lastmod>2024-07-26T19:27:42.503Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/posts/package_development_rstudio/index.html</loc>
-    <lastmod>2024-07-21T10:19:54.440Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/about.html</loc>
-    <lastmod>2024-07-21T10:19:54.428Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
-    <lastmod>2024-07-21T10:19:54.440Z</lastmod>
+    <lastmod>2024-07-26T19:27:42.507Z</lastmod>
   </url>
   <url>
     <loc>https://Carluna.github.io/bReaus/posts/dashboard_self_update/index.html</loc>
-    <lastmod>2024-07-21T10:19:54.436Z</lastmod>
+    <lastmod>2024-07-26T19:27:42.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/about.html</loc>
+    <lastmod>2024-07-26T19:27:42.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
+    <lastmod>2024-07-26T19:27:42.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Carluna.github.io/bReaus/posts/osm_in_R/index.html</loc>
+    <lastmod>2024-07-26T19:27:42.507Z</lastmod>
   </url>
 </urlset>
