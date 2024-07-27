@@ -14,7 +14,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         
-      - name: Uodate apt
+      - name: Update apt
         run: sudo apt-get update      
         
       - name: Install libraries for sf

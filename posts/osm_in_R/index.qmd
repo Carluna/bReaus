@@ -54,7 +54,7 @@ df_build <- opq(bbox = bbox) |>
     osmdata_sf()  
 
 df_build_poly <- df_build$osm_polygons |> 
-  select(geometry)
+  select(geometry, building, public_transport) # get all buildings and information about usage as public transport
 
 # Get lines of the feature highway
 df_highw <- opq(bbox = bbox) |> 
@@ -88,7 +88,7 @@ names(df_build)
 
 # Plot the data {{< iconify ic:outline-draw >}}
 
-Now we just have to plot our data. I use the function `geom_textsf()` from the package `geomtextpath` to add labels to the river and the streets. Note that you have to declare that you used the data from OSM, see [here](https://www.openstreetmap.org/copyright) for more informations.
+Now we just have to plot our data. I use the function `geom_textsf()` from the package `geomtextpath` to add labels to the river and the streets. Note that you have to declare that you used the data from OSM, see [here](https://www.openstreetmap.org/copyright) for more informations.  In the case of buildings, we differentiate between whether they are public transportation or not. This is because the subway stations are also part of buildings. We put them in a lighter gray under the streets!
 
 ```{r map1}
 #| warning: false
@@ -104,6 +104,9 @@ ggplot() +
           size = 3, 
           hjust = 0.01,
           vjust = -0.01) +
+  geom_sf(data = df_build_poly |> filter(!is.na(public_transport)),
+          aes(geometry = geometry),
+          fill = "grey90") +
   geom_textsf(data = df_streets,
           aes(geometry = geometry,
               label = name),
@@ -113,7 +116,7 @@ ggplot() +
           fontface = 3,
           size = 1.5,
           remove_long = T) +
-  geom_sf(data = df_build_poly,
+  geom_sf(data = df_build_poly |> filter(is.na(public_transport)),
           aes(geometry = geometry),
           fill = "grey50") +
   theme_void() +
@@ -140,12 +143,15 @@ ggplot() +
           size = 3, 
           hjust = 0.01,
           vjust = -0.01) +
+  geom_sf(data = df_build_poly |> filter(!is.na(public_transport)),
+          aes(geometry = geometry),
+          fill = "grey90") +
   geom_sf(data = df_streets,
           aes(geometry = geometry),
           color = "black",
           linewidth = 0.8
           ) +
-  geom_sf(data = df_build_poly,
+  geom_sf(data = df_build_poly |> filter(is.na(public_transport)),
           aes(geometry = geometry),
           fill = "grey50") +
   theme_void() +
