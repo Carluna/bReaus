@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/potw_240726_carbonneau24_globalSedimentBars/index.html",
       "/posts/osm_in_R/index.html",
       "/posts/dashboard_self_update/index.html",
       "/posts/package_development_rstudio/index.html",
