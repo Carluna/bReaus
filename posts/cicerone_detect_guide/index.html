@@ -222,14 +222,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>start, {</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now we can open the panels and then start the guide!</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_open</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">open =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_open</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">values =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    guide<span class="sc">$</span><span class="fu">init</span>()<span class="sc">$</span><span class="fu">start</span>()</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  })</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>One problem that can occur is that the guide will still not start but the accordion opens. A simple but maybe not so nice workaround is to use the action Button as the first step of the guide, when it’s always visible in the app. The detect the end of the guide you can use the event <code>input$cicerone_reset</code>. In your server function this could look like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>cicerone_reset, {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now we can close the panels again</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_close</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">open =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_close</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">values =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <ol>
 <li id="fn1"><p>See on GitHub: <a href="www.github.com/JohnCoene/cicerone">www.github.com/JohnCoene/cicerone</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Emoji designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Emoji designed by <a href="https://openmoji.org/">OpenMoji</a> – the open-source emoji and icon project. License: CC BY-SA 4.0<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
