@@ -1,1 +1,1 @@
-Sitemap: https://Carluna.github.io/bReaus/sitemap.xml
+Sitemap: https://carluna.github.io/bReaus/sitemap.xml
