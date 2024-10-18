@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ruben">
+<meta name="dcterms.date" content="2024-10-18">
 
-<title>bReaus</title>
+<title>R Shiny - Detect Cicerone guide start and end – bReaus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./hex-bReaus_final2.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../hex-bReaus_final2.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,74 +104,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="bReaus - A blog about water and R">
 <meta property="og:description" content="This is a place to share our thoughts and experiences with hydrology and R.">
-<meta property="og:image" content="https://carluna.github.io/bReaus/hex-bReaus_final2.png">
+<meta property="og:image" content="https://cicerone.john-coene.com/img/cicerone.png">
 <meta property="og:site_name" content="bReaus">
 <meta property="og:locale" content="de_DE">
-<meta property="og:image:height" content="1133">
-<meta property="og:image:width" content="980">
 </head>
 
 <body class="nav-fixed">
@@ -146,7 +121,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">bReaus</span>
     </a>
   </div>
@@ -157,7 +132,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -175,296 +150,99 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">bReaus</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">R Shiny - Detect Cicerone guide start and end</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">r</div>
+                <div class="quarto-category">shiny</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ruben </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 18, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Google Earth Engine">Google Earth Engine <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(5)</span></div><div class="category" data-category="deep learning">deep learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="geomorphology">geomorphology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="github">github <span class="quarto-category-count">(2)</span></div><div class="category" data-category="maps">maps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="packages">packages <span class="quarto-category-count">(1)</span></div><div class="category" data-category="potw">potw <span class="quarto-category-count">(1)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(5)</span></div><div class="category" data-category="remote sensing">remote sensing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rstudio">rstudio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="sediment">sediment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shiny">shiny <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#install-the-package-2" id="toc-install-the-package-2" class="nav-link active" data-scroll-target="#install-the-package-2">Install the package <iconify-icon inline="" icon="openmoji:package" aria-label="Icon package from openmoji Iconify.design set." title="Icon package from openmoji Iconify.design set."></iconify-icon></a></li>
+  <li><a href="#detecting-the-start-and-end-of-the-guide" id="toc-detecting-the-start-and-end-of-the-guide" class="nav-link" data-scroll-target="#detecting-the-start-and-end-of-the-guide">Detecting the start and end of the guide <iconify-icon inline="" icon="icons8:finish-flag" aria-label="Icon finish-flag from icons8 Iconify.design set." title="Icon finish-flag from icons8 Iconify.design set."></iconify-icon></a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><code>cicerone</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is a nice package that allows to integrate a tour in your Shiny app. Though I had the problem, that the guide was not really usable with accordions from the <code>bslib</code> package. When they were closed, the guide would just stop moving on. In this post I’ll present a quick fix to detect the start and end of the guide.</p>
+<section id="install-the-package-2" class="level1">
+<h1>Install the package <iconify-icon inline="" icon="openmoji:package" aria-label="Icon package from openmoji Iconify.design set." title="Icon package from openmoji Iconify.design set."></iconify-icon><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></h1>
+<p>When searching for a fix I saw in a GitHub issue that the maintainer included a new event to detect the end of a tour. So to this date it is necessary (to my knowledge) to install the development version of the package. You can do this with the following code: <code>remotes::install_github("JohnCoene/cicerone")</code>.</p>
+</section>
+<section id="detecting-the-start-and-end-of-the-guide" class="level1">
+<h1>Detecting the start and end of the guide <iconify-icon inline="" icon="icons8:finish-flag" aria-label="Icon finish-flag from icons8 Iconify.design set." title="Icon finish-flag from icons8 Iconify.design set."></iconify-icon></h1>
+<p>To detect the start I just observed a button I use to start the guide, because I didn’t want the guide started each time someone uses the app. In your UI you could integrate a button like this and start the guide when the button is pressed:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bslib)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cicerone)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ui <span class="ot">&lt;-</span> <span class="fu">page_fluid</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">use_cicerone</span>(),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">action_button</span>(<span class="st">"start"</span>, <span class="st">"Start guide"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#...here should be the code for e.g. the accordions or other elements </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>start, {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now we can open the panels and then start the guide!</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_open</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">open =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    guide<span class="sc">$</span><span class="fu">init</span>()<span class="sc">$</span><span class="fu">start</span>()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>One problem that can occur is that the guide will still not start but the accordion opens. A simple but maybe not so nice workaround is to use the action Button as the first step of the guide, when it’s always visible in the app. The detect the end of the guide you can use the event <code>input$cicerone_reset</code>. In your server function this could look like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observeEvent</span>(input<span class="sc">$</span>cicerone_reset, {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Now we can close the panels again</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    bslib<span class="sc">::</span><span class="fu">accordion_panel_close</span>(<span class="at">id =</span> <span class="st">"your-accordion-id"</span>, <span class="at">open =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,r,shiny" data-listing-date-sort="1729209600000" data-listing-file-modified-sort="1729244013147" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="341">
-<div class="thumbnail">
-<p><a href="./posts/cicerone_detect_guide/index.html" class="no-external"></a></p><a href="./posts/cicerone_detect_guide/index.html" class="no-external">
-<p><img loading="lazy" src="https://cicerone.john-coene.com/img/cicerone.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/cicerone_detect_guide/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/cicerone_detect_guide/index.html" class="no-external">R Shiny - Detect Cicerone guide start and end</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/cicerone_detect_guide/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('shiny'); return false;">
-shiny
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/cicerone_detect_guide/index.html" class="no-external"><code>cicerone</code><sup>1</sup> is a nice package that allows to integrate a tour in your Shiny app. Though I had the problem, that the guide was not really usable with accordions from the <code>bslib</code> p…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/cicerone_detect_guide/index.html" class="no-external">
-<div class="listing-date">
-Oct 18, 2024
-</div>
-<div class="listing-author">
-Ruben
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="potw,geomorphology,remote sensing,deep learning,Google Earth Engine,sediment" data-listing-date-sort="1722297600000" data-listing-file-modified-sort="1729244013155" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="916">
-<div class="thumbnail">
-<p><a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external"></a></p><a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/potw_240726_carbonneau24_globalSedimentBars/images/clipboard-3708154074.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external">POTW - Global mapping of river sediment bars</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external">Paper of the week by Carbonneau &amp; Bizzi, 2024</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('potw'); return false;">
-potw
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('geomorphology'); return false;">
-geomorphology
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('remote sensing'); return false;">
-remote sensing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('deep learning'); return false;">
-deep learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Google Earth Engine'); return false;">
-Google Earth Engine
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sediment'); return false;">
-sediment
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external">How are sediment bars and banks distributed in our rivers and how does their area change over time and space? This question may not be widely considered, yet it is a topic…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/potw_240726_carbonneau24_globalSedimentBars/index.html" class="no-external">
-<div class="listing-date">
-Jul 30, 2024
-</div>
-<div class="listing-author">
-Leo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,r,maps" data-listing-date-sort="1721952000000" data-listing-file-modified-sort="1729244013147" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1176">
-<div class="thumbnail">
-<p><a href="./posts/osm_in_R/index.html" class="no-external"></a></p><a href="./posts/osm_in_R/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/osm_in_R/index_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/osm_in_R/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/osm_in_R/index.html" class="no-external">Using data from OpenStreetMap in R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/osm_in_R/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
-maps
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/osm_in_R/index.html" class="no-external">The OpenStreetMap community provides free and open geographic data! You may wonder how to use this data in <code>R</code> and that is what we’ll cover in this post.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/osm_in_R/index.html" class="no-external">
-<div class="listing-date">
-Jul 26, 2024
-</div>
-<div class="listing-author">
-Ruben
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="code,r,packages,rstudio" data-listing-date-sort="1718668800000" data-listing-file-modified-sort="1729244013151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="623">
-<div class="thumbnail">
-<p><a href="./posts/package_development_rstudio/index.html" class="no-external"></a></p><a href="./posts/package_development_rstudio/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/package_development_rstudio/images/packages_logo.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/package_development_rstudio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/package_development_rstudio/index.html" class="no-external">Developing packages in RStudio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/package_development_rstudio/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('packages'); return false;">
-packages
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
-rstudio
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/package_development_rstudio/index.html" class="no-external"><strong><em>Why to write a package?</em></strong> Packages provide an easy way to <em>share code with others or use it later,</em> saving time by <em>organizing the code and projects in standardized way</em>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/package_development_rstudio/index.html" class="no-external">
-<div class="listing-date">
-Jun 18, 2024
-</div>
-<div class="listing-author">
-Leo
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="code,r,quarto,github" data-listing-date-sort="1718668800000" data-listing-file-modified-sort="1729244013147" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1184">
-<div class="thumbnail">
-<p><a href="./posts/dashboard_self_update/index.html" class="no-external"></a></p><a href="./posts/dashboard_self_update/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/dashboard_self_update/images/dashboard_screenshot.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/dashboard_self_update/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/dashboard_self_update/index.html" class="no-external">Hosting a self updating Quarto dashboard on GitHub</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/dashboard_self_update/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('github'); return false;">
-github
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/dashboard_self_update/index.html" class="no-external">Dashboards are cool and self updating dashboards are even cooler! This is short insight how to create something like this.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/dashboard_self_update/index.html" class="no-external">
-<div class="listing-date">
-Jun 18, 2024
-</div>
-<div class="listing-author">
-Ruben
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="code,r,quarto,github" data-listing-date-sort="1718150400000" data-listing-file-modified-sort="1729244013155" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="155">
-<div class="thumbnail">
-<p><a href="./posts/renv_install_packages/index.html" class="no-external"></a></p><a href="./posts/renv_install_packages/index.html" class="no-external">
-<p><img loading="lazy" src="https://rstudio.github.io/renv/reference/figures/logo.svg" class="thumbnail-image"></p>
-</a><p><a href="./posts/renv_install_packages/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/renv_install_packages/index.html" class="no-external">Installing packages for ‘renv’</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/renv_install_packages/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('github'); return false;">
-github
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/renv_install_packages/index.html" class="no-external"><code>renv</code> is a R package that allows to create environments, where the user can install and manage packages. This is needed when using a GitHub action, when you want to render…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/renv_install_packages/index.html" class="no-external">
-<div class="listing-date">
-Jun 12, 2024
-</div>
-<div class="listing-author">
-Ruben
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>See on GitHub: <a href="www.github.com/JohnCoene/cicerone">www.github.com/JohnCoene/cicerone</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Emoji designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -885,6 +663,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="Carluna/bReaus-giscus" data-repo-id="R_kgDOMIWLiA" data-category="General" data-category-id="DIC_kwDOMIWLiM4CgCCq" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 
 
