@@ -4,7 +4,8 @@ author: "Ruben"
 date: "2024-10-18"
 categories: [code, r, shiny]
 image: https://cicerone.john-coene.com/img/cicerone.png
-image-height: 100px
+image-height: 50%
+image-width: 50%
 comments:
   giscus:
     repo: Carluna/bReaus-giscus
@@ -35,7 +36,7 @@ ui <- page_fluid(
 server <- function(input, output, session) {
   observeEvent(input$start, {
     # Now we can open the panels and then start the guide!
-    bslib::accordion_panel_open(id = "your-accordion-id", open = TRUE)
+    bslib::accordion_panel_open(id = "your-accordion-id", values = TRUE)
     guide$init()$start()
   })
 }
@@ -46,10 +47,10 @@ One problem that can occur is that the guide will still not start but the accord
 ```r
   observeEvent(input$cicerone_reset, {
     # Now we can close the panels again
-    bslib::accordion_panel_close(id = "your-accordion-id", open = FALSE)
+    bslib::accordion_panel_close(id = "your-accordion-id", values = TRUE)
   })
 ```
 
 
 [^1]: See on GitHub: [www.github.com/JohnCoene/cicerone](www.github.com/JohnCoene/cicerone) 
-[^2]: Emoji designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0
+[^2]: Emoji designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: CC BY-SA 4.0
