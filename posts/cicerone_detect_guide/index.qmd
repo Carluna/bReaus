@@ -52,5 +52,5 @@ One problem that can occur is that the guide will still not start but the accord
 ```
 
 
-[^1]: See on GitHub: [www.github.com/JohnCoene/cicerone](www.github.com/JohnCoene/cicerone) 
+[^1]: See on GitHub: [https://github.com/JohnCoene/cicerone](https://github.com/JohnCoene/cicerone)
 [^2]: Emoji designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: CC BY-SA 4.0
