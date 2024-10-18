@@ -1,0 +1,55 @@
+---
+title: "R Shiny - Detect Cicerone guide start and end"
+author: "Ruben"
+date: "2024-10-18"
+categories: [code, r, shiny]
+image: https://cicerone.john-coene.com/img/cicerone.png
+image-height: 100px
+comments:
+  giscus:
+    repo: Carluna/bReaus-giscus
+toc: true
+---
+
+`cicerone`[^1] is a nice package that allows to integrate a tour in your Shiny app. Though I had the problem, that the guide was not really usable with accordions from the `bslib` package. When they were closed, the guide would just stop moving on. In this post I'll present a quick fix to detect the start and end of the guide.
+
+# Install the package {{< iconify openmoji:package >}}[^2]
+
+When searching for a fix I saw in a GitHub issue that the maintainer included a new event to detect the end of a tour. So to this date it is necessary (to my knowledge) to install the development version of the package. You can do this with the following code: `remotes::install_github("JohnCoene/cicerone")`.
+
+# Detecting the start and end of the guide {{< iconify icons8:finish-flag >}}
+
+To detect the start I just observed a button I use to start the guide, because I didn't want the guide started each time someone uses the app. In your UI you could integrate a button like this and start the guide when the button is pressed:
+
+```r
+library(shiny)
+library(bslib)
+library(cicerone)
+
+ui <- page_fluid(
+  use_cicerone(),
+  action_button("start", "Start guide")
+  #...here should be the code for e.g. the accordions or other elements 
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$start, {
+    # Now we can open the panels and then start the guide!
+    bslib::accordion_panel_open(id = "your-accordion-id", open = TRUE)
+    guide$init()$start()
+  })
+}
+```
+
+One problem that can occur is that the guide will still not start but the accordion opens. A simple but maybe not so nice workaround is to use the action Button as the first step of the guide, when it's always visible in the app. The detect the end of the guide you can use the event `input$cicerone_reset`. In your server function this could look like this:
+
+```r
+  observeEvent(input$cicerone_reset, {
+    # Now we can close the panels again
+    bslib::accordion_panel_close(id = "your-accordion-id", open = FALSE)
+  })
+```
+
+
+[^1]: See on GitHub: [www.github.com/JohnCoene/cicerone](www.github.com/JohnCoene/cicerone) 
+[^2]: Emoji designed by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0
