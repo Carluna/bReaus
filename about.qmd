@@ -12,4 +12,4 @@ about:
 ---
 # bReaus
 
-R, bros and eau!
+R, bros and eau!A blog where we share our experiences with R and hydrology.
