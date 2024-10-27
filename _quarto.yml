@@ -11,6 +11,7 @@ website:
     locale: de_DE
   favicon: hex-bReaus_final2.png
   navbar:
+    logo: images/hex-bReaus_final2.png
     right:
       - about.qmd
       - icon: github
