@@ -16,9 +16,7 @@ The OpenStreetMap community provides free and open geographic data! You may wond
 
 We'll use the package [`osmdata`](https://github.com/ropensci/osmdata) to get access to the OpenStreetMap (OSM) data. `sf` gives us the basic functions to work with geographic data and we use `dplyr` and `tidyr` for data manipulation. `ggplot2` and `geomtextpath` will be used for the visualization.
 
-```{r libraries}
-#| warning: false
-#| message: false
+```r
 require(sf)
 require(osmdata)
 require(dplyr)
@@ -31,8 +29,7 @@ require(geomtextpath)
 
 First we have to set the extent of which we want to get the data. I chose the district *La Guillotiere-Sud* in Lyon.
 
-```{r extent}
-#| warning: false
+```r
 # Create bounding box of desired extent
 extent <- tibble(
   lon = c(4.833075520540814, 4.851088606828741),
@@ -46,8 +43,7 @@ bbox <- extent %>%
 
 Next we will use the function `opq` to build a query to the OSM database with the information of our extent `bbox`. With `add_osm_feature()` we can download different features from OSM, in our case these are "building", "highway" and "waterway". [Here](https://wiki.openstreetmap.org/wiki/Map_Features) you can see the full list of possibilities. `osmdata_sf` will return the desired feature as an `sf` object. We will intersect the output again because the extent of the received data is slightly bigger.
 
-```{r loadData}
-#| warning: false
+```r
 # Get polygons of the feature building
 df_build <- opq(bbox = bbox) |> 
     add_osm_feature(key = "building", value_exact = FALSE) |> 
@@ -82,16 +78,20 @@ df_river <- df_waterw$osm_lines |>
 
 > Note: We actually do not only get the polygons or lines but also the features which are points or other geometries.
 
-```{r}
+```r
 names(df_build)
+```
+```r
+#> [1] "bbox"              "overpass_call"     "meta"             
+#> [4] "osm_points"        "osm_lines"         "osm_polygons"     
+#> [7] "osm_multilines"    "osm_multipolygons"
 ```
 
 # Plot the data {{< iconify ic:outline-draw >}}
 
 Now we just have to plot our data. I use the function `geom_textsf()` from the package `geomtextpath` to add labels to the river and the streets. Note that you have to declare that you used the data from OSM, see [here](https://www.openstreetmap.org/copyright) for more informations.  In the case of buildings, we differentiate between whether they are public transportation or not. This is because the subway stations are also part of buildings. We put them in a lighter gray under the streets!
 
-```{r map1}
-#| warning: false
+```r 
 ggplot() +
   geom_textsf(data = df_river,
           aes(geometry = geometry,
@@ -125,12 +125,11 @@ ggplot() +
   theme(plot.title = element_text(face = "bold"),
         plot.caption = element_text(size = 7))
 ```
+![](images/map1-1.png)
 
 To be honest, the street names are not really readable and a bit confusing in this map. So lets do it again without!
 
-```{r}
-#| warning: false
-#| classes: preview-image
+```r
 ggplot() +
   geom_textsf(data = df_river,
           aes(geometry = geometry,
@@ -160,7 +159,7 @@ ggplot() +
   theme(plot.title = element_text(face = "bold"),
         plot.caption = element_text(size = 7))
 ```
-
+![](images/map2.png)
 
 # Further ressources
 
