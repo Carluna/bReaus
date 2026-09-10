@@ -3,7 +3,9 @@ title: "Create boundary for maps with Equal Earth projection"
 author: "Ruben"
 date: "2026-09-10"
 categories: [code, r, maps]
-image-height: 230px
+image: images/map_graticules_outer.svg
+image-height: 50%
+image-width: 50%
 comments:
   giscus:
     repo: Carluna/bReaus-giscus
@@ -27,6 +29,8 @@ sh_world <- rnaturalearth::ne_countries(type = "countries") |>
   sf::st_combine() |>
   sf::st_union(by_feature = T) |>
   sf::st_transform("+proj=eqearth")
+
+plot(sh_world)
 ```
 
 ![](images/map_eqearth.png){fig-align="center"}
