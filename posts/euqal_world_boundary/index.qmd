@@ -1,0 +1,12 @@
+---
+title: "Create boundary for maps with equal earth projection"
+author: "Ruben"
+date: "2024-09-10"
+categories: [code, r, maps]
+image-height: 230px
+comments:
+  giscus:
+    repo: Carluna/bReaus-giscus
+toc: true
+---
+
