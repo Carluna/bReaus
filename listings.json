@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/euqal_world_boundary/index.html",
       "/posts/cicerone_detect_guide/index.html",
       "/posts/potw_240726_carbonneau24_globalSedimentBars/index.html",
       "/posts/osm_in_R/index.html",

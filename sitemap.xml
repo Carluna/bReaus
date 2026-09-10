@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carluna.github.io/bReaus/posts/potw_240726_carbonneau24_globalSedimentBars/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.821Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.822Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/posts/cicerone_detect_guide/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.806Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/about.html</loc>
-    <lastmod>2026-09-10T08:17:46.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.805Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/posts/package_development_rstudio/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.818Z</lastmod>
-  </url>
-  <url>
-    <loc>https://carluna.github.io/bReaus/posts/dashboard_self_update/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.806Z</lastmod>
+    <loc>https://carluna.github.io/bReaus/posts/euqal_world_boundary/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.689Z</lastmod>
   </url>
   <url>
     <loc>https://carluna.github.io/bReaus/posts/osm_in_R/index.html</loc>
-    <lastmod>2026-09-10T08:17:46.816Z</lastmod>
+    <lastmod>2026-09-10T13:49:23.699Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/posts/dashboard_self_update/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/posts/package_development_rstudio/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.702Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.687Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/about.html</loc>
+    <lastmod>2026-09-10T13:49:23.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/posts/cicerone_detect_guide/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/posts/renv_install_packages/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.706Z</lastmod>
+  </url>
+  <url>
+    <loc>https://carluna.github.io/bReaus/posts/potw_240726_carbonneau24_globalSedimentBars/index.html</loc>
+    <lastmod>2026-09-10T13:49:23.704Z</lastmod>
   </url>
 </urlset>
